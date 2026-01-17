@@ -37,8 +37,8 @@ export default function Home() {
                                 </CardDescription>
                             </CardHeader>
                         </Card>
-                </Link>
-            ))}
+                    </Link>
+                ))}
         </div>
         </div>
     );
