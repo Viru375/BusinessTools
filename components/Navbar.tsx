@@ -31,7 +31,7 @@ export function Navbar() {
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg">
                     <Calculator className="h-4 w-4" />
                 </div>
-                <span className="text-lg font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Business Tools</span>
+                <span className="text-lg font-bold navbar-brand">Business Tools</span>
             </div>
 
             <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
@@ -39,7 +39,7 @@ export function Navbar() {
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg">
                         <Calculator className="h-4 w-4" />
                     </div>
-                    <span className="text-lg font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Business Tools</span>
+                    <span className="text-lg font-bold navbar-brand">Business Tools</span>
                 </div>
             </div>
         </header>

@@ -79,3 +79,87 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer components {
+    /* Custom animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+    
+    /* Card enhancements */
+    .card-hover {
+        @apply transition-all duration-300 ease-in-out;
+    }
+    
+    .card-hover:hover {
+        @apply shadow-xl scale-105;
+        transform: translateY(-4px);
+    }
+    
+    /* Button enhancements */
+    .btn-primary {
+        @apply bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
+    }
+    
+    /* Sidebar enhancements */
+    .sidebar-item {
+        @apply transition-all duration-200 ease-in-out;
+    }
+    
+    .sidebar-item:hover {
+        @apply bg-emerald-50 text-emerald-700 border-l-4 border-emerald-500;
+    }
+    
+    /* Navbar enhancements */
+    .navbar-brand {
+        @apply bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-bold;
+    }
+    
+    /* Page title enhancements */
+    .page-title {
+        @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4;
+    }
+    
+    /* Grid enhancements */
+    .tools-grid {
+        @apply grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+    }
+    
+    /* Tool count badge */
+    .tool-count {
+        @apply inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white text-sm font-bold shadow-md;
+    }
+    
+    /* Loading states */
+    .loading-skeleton {
+        @apply animate-pulse bg-gray-200 rounded;
+    }
+    
+    /* Scrollbar styling */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-gray-100;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-400;
+    }
+}
