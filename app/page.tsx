@@ -44,10 +44,10 @@ export default function Home() {
                                     {cluster.name}
                                 </CardTitle>
                                 <CardDescription className="text-sm text-muted-foreground">
-                                    <div className="font-medium text-gray-700 mb-2">{cluster.tools.length} Professional Tools</div>
-                                    <div className="text-xs text-gray-500 line-clamp-3 bg-gray-50 rounded-lg p-2">
+                                    <p className="font-medium text-gray-700 mb-2">{cluster.tools.length} Professional Tools</p>
+                                    <p className="text-xs text-gray-500 line-clamp-3 bg-gray-50 rounded-lg p-2">
                                         {cluster.tools.slice(0, 3).map(t => t.name).join(", ")}...
-                                    </div>
+                                    </p>
                                 </CardDescription>
                             </CardHeader>
                         </Card>
