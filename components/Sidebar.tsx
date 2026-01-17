@@ -17,29 +17,38 @@ export function SidebarContent({ className }: { className?: string }) {
         <div className={cn("pb-12", className)}>
             <div className="space-y-4 py-4">
                 <div className="px-3 py-2">
-                    <Link href="/" className="mb-4 px-3 flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg">
+                    <Link href="/" className="mb-6 px-3 flex items-center gap-3 hover-lift">
+                        <div className="icon-wrapper">
                             <Calculator className="h-5 w-5" />
                         </div>
                         <span className="navbar-brand text-xl">Business Tools</span>
                     </Link>
                     <div className="space-y-1">
-                        <Accordion type="single" collapsible className="w-full space-y-2">
+                        <Accordion type="single" collapsible className="w-full space-y-3">
                             {toolsData.map((cluster) => (
-                                <AccordionItem value={cluster.slug} key={cluster.slug} className="border-none rounded-lg bg-white/60 backdrop-blur-sm border border-emerald-100/50 shadow-sm">
-                                    <AccordionTrigger className="px-4 py-3 text-sm font-medium hover:no-underline sidebar-item rounded-lg">
-                                        <span className="text-gray-700">{cluster.name}</span>
-                                        <span className="tool-count ml-auto mr-2">{cluster.tools.length}</span>
+                                <AccordionItem value={cluster.slug} key={cluster.slug} className="border-none rounded-xl category-card overflow-hidden">
+                                    <AccordionTrigger className="px-4 py-4 text-sm font-medium hover:no-underline sidebar-item">
+                                        <div className="flex items-center justify-between w-full">
+                                            <span className="text-gray-800 font-semibold">{cluster.name}</span>
+                                            <div className="flex items-center gap-2">
+                                                <div className="stats-badge">
+                                                    <span className="text-xs">{cluster.tools.length}</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </AccordionTrigger>
                                     <AccordionContent className="pt-0">
-                                        <div className="flex flex-col space-y-1 px-2 pb-3">
+                                        <div className="flex flex-col space-y-1 px-3 pb-4">
                                             {cluster.tools.map((tool) => (
                                                 <Link
                                                     key={tool.slug}
                                                     href={tool.path}
-                                                    className="block rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors sidebar-item"
+                                                    className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-all duration-200 sidebar-item"
                                                 >
-                                                    {tool.name}
+                                                    <span className="flex items-center gap-2">
+                                                        <span className="w-1 h-1 rounded-full bg-emerald-400"></span>
+                                                        {tool.name}
+                                                    </span>
                                                 </Link>
                                             ))}
                                         </div>
